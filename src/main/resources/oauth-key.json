@@ -1,0 +1,18 @@
+{
+	"web": {
+		"client_id": "216140642046-7sdeabhaisq2q192pbjj2q3mugf2qr39.apps.googleusercontent.com",
+		"project_id": "hera-actuator-335c6",
+		"auth_uri": "https://accounts.google.com/o/oauth2/auth",
+		"token_uri": "https://oauth2.googleapis.com/token",
+		"auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+		"client_secret": "q7j-RzHznXmJ6bhoGMOY7tkA",
+		"redirect_uris": [
+			"https://hera-actuator-335c6.firebaseapp.com/__/auth/handler"
+		],
+		"javascript_origins": [
+			"http://localhost",
+			"http://localhost:5000",
+			"https://hera-actuator-335c6.firebaseapp.com"
+		]
+	}
+}

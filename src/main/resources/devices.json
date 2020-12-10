@@ -1,0 +1,272 @@
+[
+	{
+		"id": 0,
+		"handlerClass": "js.hera.assist.OnOffDeviceHandler",
+		"type": "action.devices.types.OUTLET",
+		"traits": [
+			"action.devices.traits.OnOff"
+		],
+		"name": {
+			"name": "TV Set",
+			"defaultNames": [],
+			"nicknames": []
+		},
+		"info": {
+			"manufacturer": "HERA",
+			"model": "js.hera.dev.Actuator",
+			"hwVersion": "1.0",
+			"swVersion": "1.0"
+		},
+		"attributes": {
+			"commandOnlyOnOff": false,
+			"queryOnlyOnOff": false
+		},
+		"roomHint": "Living Room",
+		"reportState": true,
+		"hostName": "actuators",
+		"deviceName": "actuator-4"
+	},
+	{
+		"id": 1,
+		"handlerClass": "js.hera.assist.OnOffDeviceHandler",
+		"type": "action.devices.types.OUTLET",
+		"traits": [
+			"action.devices.traits.OnOff"
+		],
+		"name": {
+			"name": "Cooker",
+			"defaultNames": [],
+			"nicknames": []
+		},
+		"info": {
+			"manufacturer": "HERA",
+			"model": "js.hera.dev.Actuator",
+			"hwVersion": "1.0",
+			"swVersion": "1.0"
+		},
+		"attributes": {
+			"commandOnlyOnOff": false,
+			"queryOnlyOnOff": false
+		},
+		"roomHint": "Kitcheen",
+		"reportState": true,
+		"hostName": "dht-sensor",
+		"deviceName": "actuator-6"
+	},
+	{
+		"id": 2,
+		"handlerClass": "js.hera.assist.ThermostatDeviceHandler",
+		"type": "action.devices.types.THERMOSTAT",
+		"traits": [
+			"action.devices.traits.TemperatureSetting"
+		],
+		"name": {
+			"name": "Thermostat",
+			"defaultNames": [],
+			"nicknames": []
+		},
+		"info": {
+			"manufacturer": "HERA",
+			"model": "js.hera.dev.Thermostat",
+			"hwVersion": "1.0",
+			"swVersion": "1.0"
+		},
+		"attributes": {
+			"availableThermostatModes": [
+				"heat"
+			],
+			"thermostatTemperatureRange": {
+				"minThresholdCelsius": 20,
+				"maxThresholdCelsius": 24
+			},
+			"thermostatTemperatureUnit": "C",
+			"commandOnlyTemperatureSetting": false,
+			"queryOnlyTemperatureSetting": false
+		},
+		"roomHint": "Living Room",
+		"reportState": true,
+		"hostName": "thermostat",
+		"deviceName": "thermostat"
+	},
+	{
+		"id": 3,
+		"handlerClass": "js.hera.assist.OnOffDeviceHandler",
+		"type": "action.devices.types.LIGHT",
+		"traits": [
+			"action.devices.traits.OnOff"
+		],
+		"name": {
+			"name": "Desktop Lamp",
+			"defaultNames": [],
+			"nicknames": []
+		},
+		"info": {
+			"manufacturer": "HERA",
+			"model": "js.hera.dev.Actuator",
+			"hwVersion": "1.0",
+			"swVersion": "1.0"
+		},
+		"attributes": {
+			"commandOnlyOnOff": false,
+			"queryOnlyOnOff": false
+		},
+		"roomHint": "Living Room",
+		"reportState": true,
+		"hostName": "dht-sensor",
+		"deviceName": "actuator-5"
+	},
+	{
+		"id": 4,
+		"handlerClass": "js.hera.assist.OnOffDeviceHandler",
+		"type": "action.devices.types.LIGHT",
+		"traits": [
+			"action.devices.traits.OnOff"
+		],
+		"name": {
+			"name": "Light",
+			"defaultNames": [],
+			"nicknames": []
+		},
+		"info": {
+			"manufacturer": "HERA",
+			"model": "js.hera.dev.BinaryLight",
+			"hwVersion": "1.0",
+			"swVersion": "1.0"
+		},
+		"attributes": {
+			"commandOnlyOnOff": false,
+			"queryOnlyOnOff": false
+		},
+		"roomHint": "Living Room",
+		"reportState": true,
+		"hostName": "actuators",
+		"deviceName": "actuator-3"
+	},
+	{
+		"id": 5,
+		"handlerClass": "js.hera.assist.OnOffDeviceHandler",
+		"type": "action.devices.types.LIGHT",
+		"traits": [
+			"action.devices.traits.OnOff"
+		],
+		"name": {
+			"name": "Light",
+			"defaultNames": [],
+			"nicknames": []
+		},
+		"info": {
+			"manufacturer": "HERA",
+			"model": "js.hera.dev.BinaryLight",
+			"hwVersion": "1.0",
+			"swVersion": "1.0"
+		},
+		"attributes": {
+			"commandOnlyOnOff": false,
+			"queryOnlyOnOff": false
+		},
+		"roomHint": "Kitcheen",
+		"reportState": true,
+		"hostName": "actuators",
+		"deviceName": "actuator-2"
+	},
+	{
+		"id": 6,
+		"handlerClass": "js.hera.assist.ComputerDeviceHandler",
+		"type": "action.devices.types.OUTLET",
+		"traits": [
+			"action.devices.traits.OnOff"
+		],
+		"name": {
+			"name": "Service Computer",
+			"defaultNames": [],
+			"nicknames": [
+				"Service PC",
+				"Serv PC"
+			]
+		},
+		"info": {
+			"manufacturer": "HERA",
+			"model": "js.hera.dev.Actuator",
+			"hwVersion": "1.0",
+			"swVersion": "1.0"
+		},
+		"attributes": {
+			"commandOnlyOnOff": false,
+			"queryOnlyOnOff": false
+		},
+		"roomHint": "Living Room",
+		"reportState": true,
+		"hostName": "serv.local",
+		"deviceName": "E8:D8:D1:BF:B7:3E"
+	},
+	{
+		"id": 7,
+		"handlerClass": "js.hera.assist.ComputerDeviceHandler",
+		"type": "action.devices.types.OUTLET",
+		"traits": [
+			"action.devices.traits.OnOff"
+		],
+		"name": {
+			"name": "Development Computer",
+			"defaultNames": [],
+			"nicknames": [
+				"Development PC",
+				"Dev PC"
+			]
+		},
+		"info": {
+			"manufacturer": "HERA",
+			"model": "js.hera.dev.Actuator",
+			"hwVersion": "1.0",
+			"swVersion": "1.0"
+		},
+		"attributes": {
+			"commandOnlyOnOff": false,
+			"queryOnlyOnOff": false
+		},
+		"roomHint": "Living Room",
+		"reportState": true,
+		"hostName": "dev.local",
+		"deviceName": "50:E5:49:E7:16:A0"
+	},
+	{
+		"id": 8,
+		"handlerClass": "js.hera.assist.SensorDeviceHandler",
+		"type": "action.devices.types.SENSOR",
+		"traits": [
+			"action.devices.traits.HumiditySetting",
+			"action.devices.traits.TemperatureControl"
+		],
+		"name": {
+			"name": "Sensor",
+			"defaultNames": [],
+			"nicknames": []
+		},
+		"info": {
+			"manufacturer": "HERA",
+			"model": "js.hera.dev.Sensor",
+			"hwVersion": "1.0",
+			"swVersion": "1.0"
+		},
+		"attributes": {
+			"humiditySetpointRange": {
+				"minPercent": 0,
+				"maxPercent": 100
+			},
+			"commandOnlyHumiditySetting": false,
+			"queryOnlyHumiditySetting": true,
+			"temperatureRange": {
+				"minThresholdCelsius": 19.0,
+				"maxThresholdCelsius": 24.0
+			},
+			"temperatureStepCelsius": 0.5,
+			"temperatureUnitForUX": "C",
+			"commandOnlyTemperatureControl": false,
+			"queryOnlyTemperatureControl": true
+		},
+		"roomHint": "Living Room",
+		"reportState": true,
+		"hostName": "dht-sensor",
+		"deviceName": "dht-sensor"
+	}
+]
