@@ -3,8 +3,25 @@ package js.hera.assist;
 import java.util.HashMap;
 import java.util.Map;
 
+import js.log.Log;
+import js.log.LogFactory;
+
 public class SensorDeviceHandler extends DeviceHandler
 {
+  private static final Log log = LogFactory.getLog(SensorDeviceHandler.class);
+
+  public SensorDeviceHandler()
+  {
+    log.trace("SensorDeviceHandler()");
+  }
+
+  @Override
+  public Map<String, Object> execute(String command, Map<String, Object> parameters)
+  {
+    log.warn("Command |%s| not implemented.", command);
+    return null;
+  }
+
   @Override
   public Map<String, Object> query()
   {
@@ -17,12 +34,6 @@ public class SensorDeviceHandler extends DeviceHandler
     // states.put("temperatureSetpointCelsius", temperature);
     states.put("temperatureAmbientCelsius", value.temperature);
     return states;
-  }
-
-  @Override
-  public Map<String, Object> execute(Map<String, Object> parameters)
-  {
-    return parameters;
   }
 
   private static class Value

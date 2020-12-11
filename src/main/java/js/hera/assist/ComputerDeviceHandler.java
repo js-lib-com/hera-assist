@@ -13,6 +13,30 @@ public class ComputerDeviceHandler extends DeviceHandler
 {
   private static final Log log = LogFactory.getLog(ComputerDeviceHandler.class);
 
+  public ComputerDeviceHandler()
+  {
+    log.trace("ComputerDeviceHandler()");
+  }
+
+  @Override
+  public Map<String, Object> execute(String command, Map<String, Object> parameters)
+  {
+    switch(command) {
+    case "action.devices.commands.OnOff":
+      boolean parameter = (boolean)parameters.get("on");
+      if(parameter) {
+        // by convention, for computers, device name is the MAC address
+        WOL(getDeviceName());
+      }
+      return query();
+
+    default:
+      log.warn("Command |%s| not implemented.", command);
+      break;
+    }
+    return null;
+  }
+
   @Override
   public Map<String, Object> query()
   {
@@ -21,23 +45,11 @@ public class ComputerDeviceHandler extends DeviceHandler
     return states;
   }
 
-  @Override
-  public Map<String, Object> execute(Map<String, Object> parameters)
-  {
-    boolean parameter = (boolean)parameters.get("on");
-    if(parameter) {
-      // for computer device name is the MAC address
-      WOL(getDeviceName());
-    }
-    return query();
-  }
-
   private static final String BCAST_ADDRESS = "192.168.0.255";
   private static final int BCAST_PORT = 9;
 
   public static void WOL(String MAC)
   {
-    log.debug("WOL |%s|.", MAC);
     try {
       byte[] macBytes = getMacBytes(MAC);
       byte[] payload = new byte[6 + 16 * macBytes.length];
@@ -53,7 +65,7 @@ public class ComputerDeviceHandler extends DeviceHandler
       socket.send(packet);
       socket.close();
 
-      log.debug("WOL packet sent.");
+      log.debug("WOL packet sent to |%s|.", MAC);
     }
     catch(Exception e) {
       log.error("Failed to send WOL packet: %s", e);

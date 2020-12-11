@@ -181,9 +181,13 @@ public class ActionsFulfillment extends SmartHomeApp
         Commands.Execution execution = command.getExecution()[0];
 
         log.debug("Execute command |%s| with parameter |%s| on device |%s|.", execution.getCommand(), execution.getParams(), device.getId());
-        states.putAll(deviceHandler.execute(execution.getParams()));
+        Map<String, Object> resultStates = deviceHandler.execute(execution.getCommand(), execution.getParams());
+        
         // after successful execution add device id
-        successfulDevices.add(device.getId());
+        if(resultStates != null) {
+          states.putAll(resultStates);
+          successfulDevices.add(device.getId());
+        }
       }
     }
 

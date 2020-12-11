@@ -3,8 +3,18 @@ package js.hera.assist;
 import java.util.HashMap;
 import java.util.Map;
 
+import js.log.Log;
+import js.log.LogFactory;
+
 public class ThermostatDeviceHandler extends DeviceHandler
 {
+  private static final Log log = LogFactory.getLog(ThermostatDeviceHandler.class);
+
+  public ThermostatDeviceHandler()
+  {
+    log.trace("ThermostatDeviceHandler()");
+  }
+
   @Override
   public Map<String, Object> query()
   {
@@ -12,10 +22,18 @@ public class ThermostatDeviceHandler extends DeviceHandler
   }
 
   @Override
-  public Map<String, Object> execute(Map<String, Object> parameters)
+  public Map<String, Object> execute(String command, Map<String, Object> parameters)
   {
-    Number setpoint = (Number)parameters.get("thermostatTemperatureSetpoint");
-    return states(rmi("updateSetpoint", setpoint.toString(), State.class));
+    switch(command) {
+    case "action.devices.commands.ThermostatTemperatureSetpoint":
+      Number setpoint = (Number)parameters.get("thermostatTemperatureSetpoint");
+      return states(rmi("updateSetpoint", setpoint.toString(), State.class));
+
+    default:
+      log.warn("Command |%s| not implemented.", command);
+      break;
+    }
+    return null;
   }
 
   private static Map<String, Object> states(State state)

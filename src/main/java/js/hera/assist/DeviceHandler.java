@@ -17,7 +17,7 @@ public abstract class DeviceHandler
 {
   private static final Log log = LogFactory.getLog(Device.class);
 
-  public abstract Map<String, Object> execute(Map<String, Object> parameters);
+  public abstract Map<String, Object> execute(String command, Map<String, Object> parameters);
 
   public abstract Map<String, Object> query();
 
