@@ -231,6 +231,36 @@
 	},
 	{
 		"id": 8,
+		"handlerClass": "js.hera.assist.ComputerDeviceHandler",
+		"type": "action.devices.types.OUTLET",
+		"traits": [
+			"action.devices.traits.OnOff"
+		],
+		"name": {
+			"name": "Backup Computer",
+			"defaultNames": [],
+			"nicknames": [
+				"Backup PC",
+				"Backup Server"
+			]
+		},
+		"info": {
+			"manufacturer": "HERA",
+			"model": "js.hera.dev.Actuator",
+			"hwVersion": "1.0",
+			"swVersion": "1.0"
+		},
+		"attributes": {
+			"commandOnlyOnOff": false,
+			"queryOnlyOnOff": false
+		},
+		"roomHint": "Living Room",
+		"reportState": true,
+		"hostName": "backup.local",
+		"deviceName": "90:2B:34:5A:DB:D8"
+	},
+	{
+		"id": 9,
 		"handlerClass": "js.hera.assist.SensorDeviceHandler",
 		"type": "action.devices.types.SENSOR",
 		"traits": [
