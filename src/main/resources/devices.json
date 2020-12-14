@@ -241,7 +241,8 @@
 			"defaultNames": [],
 			"nicknames": [
 				"Backup PC",
-				"Backup Server"
+				"Backup Server",
+				"VPN Server"
 			]
 		},
 		"info": {
@@ -254,7 +255,7 @@
 			"commandOnlyOnOff": false,
 			"queryOnlyOnOff": false
 		},
-		"roomHint": "Living Room",
+		"roomHint": "Technical Room",
 		"reportState": true,
 		"hostName": "backup.local",
 		"deviceName": "90:2B:34:5A:DB:D8"
@@ -293,6 +294,57 @@
 			"temperatureUnitForUX": "C",
 			"commandOnlyTemperatureControl": false,
 			"queryOnlyTemperatureControl": true
+		},
+		"roomHint": "Living Room",
+		"reportState": true,
+		"hostName": "dht-sensor",
+		"deviceName": "dht-sensor"
+	},
+	{
+		"id": 10,
+		"handlerClass": "js.hera.assist.JukeboxDeviceHandler",
+		"type": "action.devices.types.AUDIO_VIDEO_RECEIVER",
+		"traits": [
+			"action.devices.traits.InputSelector",
+			"action.devices.traits.OnOff",
+			"action.devices.traits.Volume",
+			"action.devices.traits.MediaState"
+		],
+		"name": {
+			"name": "Jukebox",
+			"defaultNames": [],
+			"nicknames": []
+		},
+		"info": {
+			"manufacturer": "HERA",
+			"model": "js.hera.dev.Jukebox",
+			"hwVersion": "1.0",
+			"swVersion": "1.0"
+		},
+		"attributes": {
+			"availableInputs": [
+				{
+					"key": "collection",
+					"names": [
+						{
+							"lang": "en",
+							"name_synonym": [
+								"collection"
+							]
+						}
+					]
+				}
+			],
+			"orderedInputs": true,
+			"commandOnlyOnOff": false,
+			"queryOnlyOnOff": false,
+			"volumeMaxLevel": 11,
+			"volumeCanMuteAndUnmute": true,
+			"volumeDefaultPercentage": 20,
+			"levelStepSize": 1,
+			"commandOnlyVolume": false,
+			"supportActivityState": true,
+			"supportPlaybackState": true
 		},
 		"roomHint": "Living Room",
 		"reportState": true,
