@@ -6,13 +6,13 @@ import java.util.Map;
 import js.log.Log;
 import js.log.LogFactory;
 
-public class JukeboxDeviceHandler extends DeviceHandler
+public class SpeakerDeviceHandler extends DeviceHandler
 {
-  private static final Log log = LogFactory.getLog(JukeboxDeviceHandler.class);
+  private static final Log log = LogFactory.getLog(SpeakerDeviceHandler.class);
 
-  public JukeboxDeviceHandler()
+  public SpeakerDeviceHandler()
   {
-    log.trace("JukeboxDeviceHandler()");
+    log.trace("SpeakerDeviceHandler()");
   }
 
   @Override

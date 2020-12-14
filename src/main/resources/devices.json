@@ -350,5 +350,97 @@
 		"reportState": true,
 		"hostName": "dht-sensor",
 		"deviceName": "dht-sensor"
+	},
+	{
+		"id": 11,
+		"handlerClass": "js.hera.assist.SpeakerDeviceHandler",
+		"type": "action.devices.types.SPEAKER",
+		"traits": [
+			"action.devices.traits.OnOff",
+			"action.devices.traits.Volume",
+			"action.devices.traits.MediaState",
+			"action.devices.traits.TransportControl"
+		],
+		"name": {
+			"name": "Birdie",
+			"defaultNames": [],
+			"nicknames": []
+		},
+		"info": {
+			"manufacturer": "HERA",
+			"model": "js.hera.dev.Speaker",
+			"hwVersion": "1.0",
+			"swVersion": "1.0"
+		},
+		"attributes": {
+			"orderedInputs": true,
+			"commandOnlyOnOff": false,
+			"queryOnlyOnOff": false,
+			"volumeMaxLevel": 11,
+			"volumeCanMuteAndUnmute": true,
+			"volumeDefaultPercentage": 20,
+			"levelStepSize": 1,
+			"commandOnlyVolume": false,
+			"supportActivityState": true,
+			"supportPlaybackState": true,
+			"transportControlSupportedCommands": [
+				"NEXT",
+				"PREVIOUS",
+				"PAUSE",
+				"STOP",
+				"RESUME",
+				"SHUFFLE"
+			]
+		},
+		"roomHint": "Living Room",
+		"reportState": true,
+		"hostName": "dht-sensor",
+		"deviceName": "dht-sensor"
+	},
+	{
+		"id": 12,
+		"handlerClass": "js.hera.assist.SpeakerDeviceHandler",
+		"type": "action.devices.types.SPEAKER",
+		"traits": [
+			"action.devices.traits.OnOff",
+			"action.devices.traits.Volume",
+			"action.devices.traits.MediaState",
+			"action.devices.traits.TransportControl"
+		],
+		"name": {
+			"name": "Speaker",
+			"defaultNames": [],
+			"nicknames": []
+		},
+		"info": {
+			"manufacturer": "HERA",
+			"model": "js.hera.dev.Speaker",
+			"hwVersion": "1.0",
+			"swVersion": "1.0"
+		},
+		"attributes": {
+			"orderedInputs": true,
+			"commandOnlyOnOff": false,
+			"queryOnlyOnOff": false,
+			"volumeMaxLevel": 11,
+			"volumeCanMuteAndUnmute": true,
+			"volumeDefaultPercentage": 20,
+			"levelStepSize": 1,
+			"commandOnlyVolume": false,
+			"supportActivityState": true,
+			"supportPlaybackState": true,
+			"transportControlSupportedCommands": [
+				"NEXT",
+				"PREVIOUS",
+				"PAUSE",
+				"STOP",
+				"RESUME",
+				"SHUFFLE"
+			]
+		},
+		"roomHint": "Kitcheen",
+		"reportState": true,
+		"hostName": "dht-sensor",
+		"deviceName": "dht-sensor"
 	}
 ]
