@@ -27,6 +27,7 @@ public class SpeakerDeviceHandler extends DeviceHandler
   {
     log.trace("query()");
     Map<String, Object> states = new HashMap<>();
+    states.put("online", true);
     states.put("on", true);
     states.put("currentVolume", 5);
     states.put("isMuted", false);
