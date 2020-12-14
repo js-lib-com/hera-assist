@@ -19,7 +19,7 @@ public class JukeboxDeviceHandler extends DeviceHandler
   public Map<String, Object> execute(String command, Map<String, Object> parameters)
   {
     log.trace("execute(String,Map<String, Object>)");
-    return null;
+    return query();
   }
 
   @Override
