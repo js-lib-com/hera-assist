@@ -373,7 +373,6 @@
 			"swVersion": "1.0"
 		},
 		"attributes": {
-			"orderedInputs": true,
 			"commandOnlyOnOff": false,
 			"queryOnlyOnOff": false,
 			"volumeMaxLevel": 11,
@@ -419,7 +418,6 @@
 			"swVersion": "1.0"
 		},
 		"attributes": {
-			"orderedInputs": true,
 			"commandOnlyOnOff": false,
 			"queryOnlyOnOff": false,
 			"volumeMaxLevel": 11,
