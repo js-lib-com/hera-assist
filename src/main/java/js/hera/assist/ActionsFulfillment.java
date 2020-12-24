@@ -31,53 +31,62 @@ public class ActionsFulfillment extends SmartHomeApp
 {
   private static final Log log = LogFactory.getLog(ActionsFulfillment.class);
 
-  private final DeviceHandler[] deviceHandlers;
+  private final Map<String, DeviceHandler[]> deviceHandlers = new HashMap<>();
 
   public ActionsFulfillment()
   {
     super();
     log.trace("ActionsHandler()");
 
-    JSONArray jsonDevices = loadDevices();
-    deviceHandlers = new DeviceHandler[jsonDevices.length()];
+    for(String user : new String[]
+    {
+        "iuli", "vasy"
+    }) {
+      JSONArray jsonDevices = loadDevices(user);
+      DeviceHandler[] userDeviceHandlers = new DeviceHandler[jsonDevices.length()];
 
-    for(int i = 0; i < jsonDevices.length(); ++i) {
-      JSONObject jsonDevice = jsonDevices.getJSONObject(i);
-      try {
-        deviceHandlers[i] = (DeviceHandler)Class.forName(jsonDevice.getString("handlerClass")).newInstance();
-        deviceHandlers[i].setHostName(jsonDevice.getString("hostName"));
-        deviceHandlers[i].setDeviceName(jsonDevice.getString("deviceName"));
+      for(int i = 0; i < jsonDevices.length(); ++i) {
+        JSONObject jsonDevice = jsonDevices.getJSONObject(i);
+        try {
+          userDeviceHandlers[i] = (DeviceHandler)Class.forName(jsonDevice.getString("handlerClass")).newInstance();
+          userDeviceHandlers[i].setHostName(jsonDevice.getString("hostName"));
+          userDeviceHandlers[i].setDeviceName(jsonDevice.getString("deviceName"));
+        }
+        catch(InstantiationException | IllegalAccessException | ClassNotFoundException | JSONException e) {
+          log.error(e);
+        }
       }
-      catch(InstantiationException | IllegalAccessException | ClassNotFoundException | JSONException e) {
-        log.error(e);
-      }
+
+      deviceHandlers.put(user, userDeviceHandlers);
     }
   }
 
-  public DeviceHandler[] getDeviceHandlers()
+  // test
+  public DeviceHandler[] getDeviceHandlers(String user)
   {
-    return deviceHandlers;
+    return deviceHandlers.get(user);
   }
 
   @Override
   public SyncResponse onSync(SyncRequest syncRequest, Map<?, ?> headers)
   {
     log.trace("onSync(SyncRequest,Map<?, ?>)");
+    String user = getUser(headers);
 
     SyncResponse syncResponse = new SyncResponse();
     syncResponse.setRequestId(syncRequest.requestId);
 
     SyncResponse.Payload payload = new SyncResponse.Payload();
-    payload.setAgentUserId("1234");
-    setDevices(payload);
+    payload.setAgentUserId(user + "1234");
+    setDevices(payload, user);
 
     syncResponse.setPayload(payload);
     return syncResponse;
   }
 
-  public void setDevices(SyncResponse.Payload payload)
+  public void setDevices(SyncResponse.Payload payload, String user)
   {
-    JSONArray jsonDevices = loadDevices();
+    JSONArray jsonDevices = loadDevices(user);
     Payload.Device[] devices = new Payload.Device[jsonDevices.length()];
 
     for(int i = 0; i < devices.length; ++i) {
@@ -114,10 +123,10 @@ public class ActionsFulfillment extends SmartHomeApp
     payload.setDevices(devices);
   }
 
-  private static JSONArray loadDevices()
+  private static JSONArray loadDevices(String user)
   {
     try {
-      return new JSONArray(Strings.load(ActionsFulfillment.class.getResourceAsStream("/devices.json")));
+      return new JSONArray(Strings.load(ActionsFulfillment.class.getResourceAsStream("/devices/" + user + ".json")));
     }
     catch(JSONException | IOException e) {
       log.error(e);
@@ -138,6 +147,7 @@ public class ActionsFulfillment extends SmartHomeApp
   public QueryResponse onQuery(QueryRequest queryRequest, Map<?, ?> headers)
   {
     log.trace("onQuery(SyncRequest,Map<?, ?>)");
+    String user = getUser(headers);
 
     QueryRequest.Inputs.Payload.Device[] devices = ((QueryRequest.Inputs)queryRequest.getInputs()[0]).payload.devices;
     QueryResponse res = new QueryResponse();
@@ -149,8 +159,8 @@ public class ActionsFulfillment extends SmartHomeApp
       try {
         Map<String, Object> deviceState = new HashMap<>();
         deviceState.put("status", "SUCCESS");
-        DeviceHandler deviceHandler = deviceHandlers[Integer.parseInt(device.getId())];
-        deviceState.putAll(deviceHandler.query());
+        DeviceHandler deviceHandler = deviceHandlers.get(user)[Integer.parseInt(device.getId())];
+        deviceState.putAll(deviceHandler.query(user));
         deviceStates.put(device.getId(), deviceState);
       }
       catch(Exception e) {
@@ -169,6 +179,7 @@ public class ActionsFulfillment extends SmartHomeApp
   public ExecuteResponse onExecute(ExecuteRequest executeRequest, Map<?, ?> headers)
   {
     log.trace("onExecute(SyncRequest,Map<?, ?>)");
+    String user = getUser(headers);
 
     List<ExecuteResponse.Payload.Commands> commandsResponse = new ArrayList<>();
     List<String> successfulDevices = new ArrayList<>();
@@ -177,12 +188,12 @@ public class ActionsFulfillment extends SmartHomeApp
     Commands[] commands = ((ExecuteRequest.Inputs)executeRequest.getInputs()[0]).getPayload().getCommands();
     for(Commands command : commands) {
       for(Commands.Devices device : command.getDevices()) {
-        DeviceHandler deviceHandler = deviceHandlers[Integer.parseInt(device.getId())];
+        DeviceHandler deviceHandler = deviceHandlers.get(user)[Integer.parseInt(device.getId())];
         Commands.Execution execution = command.getExecution()[0];
 
         log.debug("Execute command |%s| with parameter |%s| on device |%s|.", execution.getCommand(), execution.getParams(), device.getId());
-        Map<String, Object> resultStates = deviceHandler.execute(execution.getCommand(), execution.getParams());
-        
+        Map<String, Object> resultStates = deviceHandler.execute(user, execution.getCommand(), execution.getParams());
+
         // after successful execution add device id
         if(resultStates != null) {
           states.putAll(resultStates);
@@ -206,8 +217,17 @@ public class ActionsFulfillment extends SmartHomeApp
   }
 
   @Override
-  public void onDisconnect(DisconnectRequest request, Map<?, ?> args)
+  public void onDisconnect(DisconnectRequest request, Map<?, ?> headers)
   {
     log.trace("onDisconnect(SyncRequest,Map<?, ?>)");
+  }
+
+  private static String getUser(Map<?, ?> headers)
+  {
+    String token = (String)headers.get("authorization");
+    // Bearer iuli123access
+    String username = token.substring(7, 11);
+    log.debug("User Name: %s", username);
+    return username;
   }
 }

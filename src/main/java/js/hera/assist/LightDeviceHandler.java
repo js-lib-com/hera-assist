@@ -6,11 +6,11 @@ import java.util.Map;
 import js.log.Log;
 import js.log.LogFactory;
 
-public class OnOffDeviceHandler extends DeviceHandler
+public class LightDeviceHandler extends DeviceHandler
 {
-  private static final Log log = LogFactory.getLog(OnOffDeviceHandler.class);
+  private static final Log log = LogFactory.getLog(LightDeviceHandler.class);
 
-  public OnOffDeviceHandler()
+  public LightDeviceHandler()
   {
     log.trace("OnOffDeviceHandler()");
   }

@@ -12,6 +12,8 @@ import js.log.Log;
 import js.log.LogFactory;
 import js.tiny.container.servlet.AppServlet;
 import js.tiny.container.servlet.RequestContext;
+import js.util.Classes;
+import js.util.Strings;
 
 public class LoginServlet extends AppServlet
 {
@@ -40,16 +42,6 @@ public class LoginServlet extends AppServlet
     }
   }
 
-  private static final String FORM = "" + //
-      "<html>" + //
-      "  <body>" + //
-      "    <form action='/login' method='post'>" + //
-      "      <input type='hidden' name='responseurl' value='%s'/>" + //
-      "      <button type='submit' style='font-size:14pt'>Link this service to Google</button>" + //
-      "    </form>" + //
-      "  </body>" + //
-      "</html>";
-
   private void handleGET(RequestContext context) throws IOException
   {
     log.trace("handleGET(HttpServletRequest,HttpServletResponse)");
@@ -63,16 +55,24 @@ public class LoginServlet extends AppServlet
     httpResponse.setContentType("text/html");
 
     PrintWriter writer = httpResponse.getWriter();
-    writer.print(String.format(FORM, redirectURL));
+    writer.print(String.format(Strings.load(Classes.getResourceAsReader("login-form.htm")), redirectURL));
     writer.flush();
   }
 
   private void handlePOST(RequestContext context) throws IOException
   {
     log.trace("handlePOST(HttpServletRequest,HttpServletResponse)");
-    // Here, you should validate the user account.
-    // In this sample, we do not do that.
-    String redirectURL = URLDecoder.decode(context.getRequest().getParameter("responseurl"), "UTF-8");
+    HttpServletRequest httpRequest = context.getRequest();
+    String username = httpRequest.getParameter("username").toLowerCase();
+    String password = httpRequest.getParameter("password");
+    log.debug("User name |%s|, password |%s|", username, password);
+    if(!username.equals("iuli") && !username.equals("vasy")) {
+      throw new IOException("Invalid user.");
+    }
+
+    // HACK: uses 'code' URL parameter to convey information about user, needed by token servlet
+    // for that replace 'code' value - that seems not use anyway, with user name
+    String redirectURL = URLDecoder.decode(context.getRequest().getParameter("responseurl"), "UTF-8").replace("xxxxxx", username);
     log.debug("Redirect URL: %s", redirectURL);
     sendRedirect(context, redirectURL);
   }

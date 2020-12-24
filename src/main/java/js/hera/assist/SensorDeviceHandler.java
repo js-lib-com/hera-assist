@@ -16,16 +16,16 @@ public class SensorDeviceHandler extends DeviceHandler
   }
 
   @Override
-  public Map<String, Object> execute(String command, Map<String, Object> parameters)
+  public Map<String, Object> execute(String user, String command, Map<String, Object> parameters)
   {
     log.warn("Command |%s| not implemented.", command);
     return null;
   }
 
   @Override
-  public Map<String, Object> query()
+  public Map<String, Object> query(String user)
   {
-    Value value = rmi("getValue", Value.class);
+    Value value = rmi(user, "getValue", Value.class);
 
     Map<String, Object> states = new HashMap<>();
     states.put("online", true);

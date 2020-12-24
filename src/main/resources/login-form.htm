@@ -1,0 +1,21 @@
+<html>
+<head>
+	<meta http-equiv="X-UA-Compatible" content="IE=9; IE=8; IE=7; IE=EDGE" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
+	<style>
+  		body {font-size:18px;}
+  		fieldset {padding:40px;}
+  		button {margin-top:40px;]}
+	</style>
+</head>
+<body>
+	<form action='/login' method='post'>
+		<input type='hidden' name='responseurl' value='%s' />
+		<fieldset>
+			<label>User Name</label><input name="username" />
+			<label>Password</label><input name="password" />
+		</fieldset>
+		<button type='submit'>Link this service to Google</button>
+	</form>
+</body>
+</html>

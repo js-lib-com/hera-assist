@@ -19,7 +19,7 @@ public class ComputerDeviceHandler extends DeviceHandler
   }
 
   @Override
-  public Map<String, Object> execute(String command, Map<String, Object> parameters)
+  public Map<String, Object> execute(String user, String command, Map<String, Object> parameters)
   {
     switch(command) {
     case "action.devices.commands.OnOff":
@@ -28,7 +28,7 @@ public class ComputerDeviceHandler extends DeviceHandler
         // by convention, for computers, device name is the MAC address
         WOL(getDeviceName());
       }
-      return query();
+      return query(user);
 
     default:
       log.warn("Command |%s| not implemented.", command);
@@ -38,7 +38,7 @@ public class ComputerDeviceHandler extends DeviceHandler
   }
 
   @Override
-  public Map<String, Object> query()
+  public Map<String, Object> query(String user)
   {
     Map<String, Object> states = new HashMap<>();
     states.put("on", true);

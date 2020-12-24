@@ -16,14 +16,14 @@ public class JukeboxDeviceHandler extends DeviceHandler
   }
 
   @Override
-  public Map<String, Object> execute(String command, Map<String, Object> parameters)
+  public Map<String, Object> execute(String user, String command, Map<String, Object> parameters)
   {
     log.trace("execute(String,Map<String, Object>)");
-    return query();
+    return query(user);
   }
 
   @Override
-  public Map<String, Object> query()
+  public Map<String, Object> query(String user)
   {
     log.trace("query()");
     Map<String, Object> states = new HashMap<>();
