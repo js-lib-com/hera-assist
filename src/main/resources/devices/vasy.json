@@ -1,33 +1,6 @@
 [
 	{
 		"id": 0,
-		"handlerClass": "js.hera.assist.OnOffDeviceHandler",
-		"type": "action.devices.types.OUTLET",
-		"traits": [
-			"action.devices.traits.OnOff"
-		],
-		"name": {
-			"name": "Night Light",
-			"defaultNames": [],
-			"nicknames": []
-		},
-		"info": {
-			"manufacturer": "HERA",
-			"model": "js.hera.dev.Actuator",
-			"hwVersion": "1.0",
-			"swVersion": "1.0"
-		},
-		"attributes": {
-			"commandOnlyOnOff": false,
-			"queryOnlyOnOff": false
-		},
-		"roomHint": "Guest Badroom",
-		"reportState": true,
-		"hostName": "esp2",
-		"deviceName": "actuator2"
-	},
-	{
-		"id": 1,
 		"handlerClass": "js.hera.assist.ThermostatDeviceHandler",
 		"type": "action.devices.types.THERMOSTAT",
 		"traits": [
@@ -62,7 +35,7 @@
 		"deviceName": "thermostat"
 	},
 	{
-		"id": 2,
+		"id": 1,
 		"handlerClass": "js.hera.assist.LightDeviceHandler",
 		"type": "action.devices.types.LIGHT",
 		"traits": [
@@ -89,7 +62,7 @@
 		"deviceName": "binary-light3"
 	},
 	{
-		"id": 3,
+		"id": 2,
 		"handlerClass": "js.hera.assist.LightDeviceHandler",
 		"type": "action.devices.types.LIGHT",
 		"traits": [
@@ -116,7 +89,7 @@
 		"deviceName": "binary-light4"
 	},
 	{
-		"id": 4,
+		"id": 3,
 		"handlerClass": "js.hera.assist.LightDeviceHandler",
 		"type": "action.devices.types.LIGHT",
 		"traits": [
@@ -143,7 +116,7 @@
 		"deviceName": "binary-light1"
 	},
 	{
-		"id": 5,
+		"id": 4,
 		"handlerClass": "js.hera.assist.LightDeviceHandler",
 		"type": "action.devices.types.LIGHT",
 		"traits": [
@@ -170,7 +143,7 @@
 		"deviceName": "binary-light2"
 	},
 	{
-		"id": 6,
+		"id": 5,
 		"handlerClass": "js.hera.assist.LightDeviceHandler",
 		"type": "action.devices.types.LIGHT",
 		"traits": [
@@ -197,7 +170,7 @@
 		"deviceName": "binary-light5"
 	},
 	{
-		"id": 7,
+		"id": 6,
 		"handlerClass": "js.hera.assist.LightDeviceHandler",
 		"type": "action.devices.types.LIGHT",
 		"traits": [
@@ -218,13 +191,13 @@
 			"commandOnlyOnOff": false,
 			"queryOnlyOnOff": false
 		},
-		"roomHint": "kitchen",
+		"roomHint": "Kitchen",
 		"reportState": true,
 		"hostName": "esp4",
 		"deviceName": "binary-light6"
 	},
 	{
-		"id": 8,
+		"id": 7,
 		"handlerClass": "js.hera.assist.LightDeviceHandler",
 		"type": "action.devices.types.LIGHT",
 		"traits": [
@@ -251,7 +224,7 @@
 		"deviceName": "binary-light7"
 	},
 	{
-		"id": 9,
+		"id": 8,
 		"handlerClass": "js.hera.assist.LightDeviceHandler",
 		"type": "action.devices.types.LIGHT",
 		"traits": [
@@ -276,5 +249,140 @@
 		"reportState": true,
 		"hostName": "esp5",
 		"deviceName": "binary-light8"
+	},
+	{
+		"id": 9,
+		"handlerClass": "js.hera.assist.OnOffDeviceHandler",
+		"type": "action.devices.types.OUTLET",
+		"traits": [
+			"action.devices.traits.OnOff"
+		],
+		"name": {
+			"name": "Night Light",
+			"defaultNames": [],
+			"nicknames": []
+		},
+		"info": {
+			"manufacturer": "HERA",
+			"model": "js.hera.dev.Actuator",
+			"hwVersion": "1.0",
+			"swVersion": "1.0"
+		},
+		"attributes": {
+			"commandOnlyOnOff": false,
+			"queryOnlyOnOff": false
+		},
+		"roomHint": "Master Bedroom",
+		"reportState": true,
+		"hostName": "esp1",
+		"deviceName": "actuator1"
+	},
+	{
+		"id": 10,
+		"handlerClass": "js.hera.assist.OnOffDeviceHandler",
+		"type": "action.devices.types.OUTLET",
+		"traits": [
+			"action.devices.traits.OnOff"
+		],
+		"name": {
+			"name": "Night Light",
+			"defaultNames": [],
+			"nicknames": []
+		},
+		"info": {
+			"manufacturer": "HERA",
+			"model": "js.hera.dev.Actuator",
+			"hwVersion": "1.0",
+			"swVersion": "1.0"
+		},
+		"attributes": {
+			"commandOnlyOnOff": false,
+			"queryOnlyOnOff": false
+		},
+		"roomHint": "Guest Bedroom",
+		"reportState": true,
+		"hostName": "esp2",
+		"deviceName": "actuator2"
+	},
+	{
+		"id": 11,
+		"handlerClass": "js.hera.assist.OnOffDeviceHandler",
+		"type": "action.devices.types.OUTLET",
+		"traits": [
+			"action.devices.traits.OnOff"
+		],
+		"name": {
+			"name": "Night Light",
+			"defaultNames": [],
+			"nicknames": []
+		},
+		"info": {
+			"manufacturer": "HERA",
+			"model": "js.hera.dev.Actuator",
+			"hwVersion": "1.0",
+			"swVersion": "1.0"
+		},
+		"attributes": {
+			"commandOnlyOnOff": false,
+			"queryOnlyOnOff": false
+		},
+		"roomHint": "Kitchen",
+		"reportState": true,
+		"hostName": "esp4",
+		"deviceName": "actuator3"
+	},
+	{
+		"id": 12,
+		"handlerClass": "js.hera.assist.OnOffDeviceHandler",
+		"type": "action.devices.types.OUTLET",
+		"traits": [
+			"action.devices.traits.OnOff"
+		],
+		"name": {
+			"name": "Night Light",
+			"defaultNames": [],
+			"nicknames": []
+		},
+		"info": {
+			"manufacturer": "HERA",
+			"model": "js.hera.dev.Actuator",
+			"hwVersion": "1.0",
+			"swVersion": "1.0"
+		},
+		"attributes": {
+			"commandOnlyOnOff": false,
+			"queryOnlyOnOff": false
+		},
+		"roomHint": "Living",
+		"reportState": true,
+		"hostName": "esp5",
+		"deviceName": "actuator4"
+	},
+	{
+		"id": 13,
+		"handlerClass": "js.hera.assist.OnOffDeviceHandler",
+		"type": "action.devices.types.OUTLET",
+		"traits": [
+			"action.devices.traits.OnOff"
+		],
+		"name": {
+			"name": "Exhaust Fan",
+			"defaultNames": [],
+			"nicknames": []
+		},
+		"info": {
+			"manufacturer": "HERA",
+			"model": "js.hera.dev.Actuator",
+			"hwVersion": "1.0",
+			"swVersion": "1.0"
+		},
+		"attributes": {
+			"commandOnlyOnOff": false,
+			"queryOnlyOnOff": false
+		},
+		"roomHint": "Kitchen",
+		"reportState": true,
+		"hostName": "esp13",
+		"deviceName": "actuator9"
 	}
 ]
