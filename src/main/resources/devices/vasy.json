@@ -44,7 +44,13 @@
 		"name": {
 			"name": "First Light",
 			"defaultNames": [],
-			"nicknames": ["First Light", "Light One", "Primary Light", "Main Light", "Big Light"]
+			"nicknames": [
+				"First Light",
+				"Light One",
+				"Primary Light",
+				"Main Light",
+				"Big Light"
+			]
 		},
 		"info": {
 			"manufacturer": "HERA",
@@ -71,7 +77,12 @@
 		"name": {
 			"name": "Second Light",
 			"defaultNames": [],
-			"nicknames": ["Second Light", "Little Light","Light Two", "Secondary Light"]
+			"nicknames": [
+				"Second Light",
+				"Little Light",
+				"Light Two",
+				"Secondary Light"
+			]
 		},
 		"info": {
 			"manufacturer": "HERA",
@@ -98,7 +109,13 @@
 		"name": {
 			"name": "First Light",
 			"defaultNames": [],
-			"nicknames": ["First Light", "Light One", "Primary Light", "Main Light", "Big Light"]
+			"nicknames": [
+				"First Light",
+				"Light One",
+				"Primary Light",
+				"Main Light",
+				"Big Light"
+			]
 		},
 		"info": {
 			"manufacturer": "HERA",
@@ -125,7 +142,12 @@
 		"name": {
 			"name": "Second Light",
 			"defaultNames": [],
-			"nicknames": ["Second Light", "Little Light","Light Two", "Secondary Light"]
+			"nicknames": [
+				"Second Light",
+				"Little Light",
+				"Light Two",
+				"Secondary Light"
+			]
 		},
 		"info": {
 			"manufacturer": "HERA",
@@ -206,7 +228,13 @@
 		"name": {
 			"name": "First Light",
 			"defaultNames": [],
-			"nicknames": ["First Light", "Light One", "Primary Light", "Main Light", "Big Light"]
+			"nicknames": [
+				"First Light",
+				"Light One",
+				"Primary Light",
+				"Main Light",
+				"Big Light"
+			]
 		},
 		"info": {
 			"manufacturer": "HERA",
@@ -233,7 +261,12 @@
 		"name": {
 			"name": "Second Light",
 			"defaultNames": [],
-			"nicknames": ["Second Light", "Little Light","Light Two", "Secondary Light"]
+			"nicknames": [
+				"Second Light",
+				"Little Light",
+				"Light Two",
+				"Secondary Light"
+			]
 		},
 		"info": {
 			"manufacturer": "HERA",
@@ -384,5 +417,59 @@
 		"reportState": true,
 		"hostName": "esp13",
 		"deviceName": "actuator9"
+	},
+	{
+		"id": 14,
+		"handlerClass": "js.hera.assist.OnOffDeviceHandler",
+		"type": "action.devices.types.HOOD",
+		"traits": [
+			"action.devices.traits.OnOff"
+		],
+		"name": {
+			"name": "Kitchen Hood",
+			"defaultNames": [],
+			"nicknames": []
+		},
+		"info": {
+			"manufacturer": "HERA",
+			"model": "js.hera.dev.Actuator",
+			"hwVersion": "1.0",
+			"swVersion": "1.0"
+		},
+		"attributes": {
+			"commandOnlyOnOff": false,
+			"queryOnlyOnOff": false
+		},
+		"roomHint": "Kitchen",
+		"reportState": true,
+		"hostName": "esp7",
+		"deviceName": "actuator6"
+	},
+	{
+		"id": 15,
+		"handlerClass": "js.hera.assist.OnOffDeviceHandler",
+		"type": "action.devices.types.OUTLET",
+		"traits": [
+			"action.devices.traits.OnOff"
+		],
+		"name": {
+			"name": "Smart Socket",
+			"defaultNames": [],
+			"nicknames": []
+		},
+		"info": {
+			"manufacturer": "HERA",
+			"model": "js.hera.dev.Actuator",
+			"hwVersion": "1.0",
+			"swVersion": "1.0"
+		},
+		"attributes": {
+			"commandOnlyOnOff": false,
+			"queryOnlyOnOff": false
+		},
+		"roomHint": "Kitchen",
+		"reportState": true,
+		"hostName": "esp7",
+		"deviceName": "actuator5"
 	}
 ]
