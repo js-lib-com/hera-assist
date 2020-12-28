@@ -471,5 +471,245 @@
 		"reportState": true,
 		"hostName": "esp7",
 		"deviceName": "actuator5"
+	},
+	{
+		"id": 16,
+		"handlerClass": "js.hera.assist.SensorDeviceHandler",
+		"type": "action.devices.types.SENSOR",
+		"traits": [
+			"action.devices.traits.HumiditySetting",
+			"action.devices.traits.TemperatureControl"
+		],
+		"name": {
+			"name": "Sensor",
+			"defaultNames": [],
+			"nicknames": []
+		},
+		"info": {
+			"manufacturer": "HERA",
+			"model": "js.hera.dev.Sensor",
+			"hwVersion": "1.0",
+			"swVersion": "1.0"
+		},
+		"attributes": {
+			"humiditySetpointRange": {
+				"minPercent": 0,
+				"maxPercent": 100
+			},
+			"commandOnlyHumiditySetting": false,
+			"queryOnlyHumiditySetting": true,
+			"temperatureRange": {
+				"minThresholdCelsius": 19.0,
+				"maxThresholdCelsius": 24.0
+			},
+			"temperatureStepCelsius": 0.5,
+			"temperatureUnitForUX": "C",
+			"commandOnlyTemperatureControl": false,
+			"queryOnlyTemperatureControl": true
+		},
+		"roomHint": "Balcony",
+		"reportState": true,
+		"hostName": "esp9",
+		"deviceName": "dht3"
+	},
+	{
+		"id": 17,
+		"handlerClass": "js.hera.assist.SensorDeviceHandler",
+		"type": "action.devices.types.SENSOR",
+		"traits": [
+			"action.devices.traits.HumiditySetting",
+			"action.devices.traits.TemperatureControl"
+		],
+		"name": {
+			"name": "Sensor",
+			"defaultNames": [],
+			"nicknames": []
+		},
+		"info": {
+			"manufacturer": "HERA",
+			"model": "js.hera.dev.Sensor",
+			"hwVersion": "1.0",
+			"swVersion": "1.0"
+		},
+		"attributes": {
+			"humiditySetpointRange": {
+				"minPercent": 0,
+				"maxPercent": 100
+			},
+			"commandOnlyHumiditySetting": false,
+			"queryOnlyHumiditySetting": true,
+			"temperatureRange": {
+				"minThresholdCelsius": 19.0,
+				"maxThresholdCelsius": 24.0
+			},
+			"temperatureStepCelsius": 0.5,
+			"temperatureUnitForUX": "C",
+			"commandOnlyTemperatureControl": false,
+			"queryOnlyTemperatureControl": true
+		},
+		"roomHint": "Bathroom",
+		"reportState": true,
+		"hostName": "esp8",
+		"deviceName": "dht2"
+	},
+	{
+		"id": 18,
+		"handlerClass": "js.hera.assist.SensorDeviceHandler",
+		"type": "action.devices.types.SENSOR",
+		"traits": [
+			"action.devices.traits.HumiditySetting",
+			"action.devices.traits.TemperatureControl"
+		],
+		"name": {
+			"name": "Sensor",
+			"defaultNames": [],
+			"nicknames": []
+		},
+		"info": {
+			"manufacturer": "HERA",
+			"model": "js.hera.dev.Sensor",
+			"hwVersion": "1.0",
+			"swVersion": "1.0"
+		},
+		"attributes": {
+			"humiditySetpointRange": {
+				"minPercent": 0,
+				"maxPercent": 100
+			},
+			"commandOnlyHumiditySetting": false,
+			"queryOnlyHumiditySetting": true,
+			"temperatureRange": {
+				"minThresholdCelsius": 19.0,
+				"maxThresholdCelsius": 24.0
+			},
+			"temperatureStepCelsius": 0.5,
+			"temperatureUnitForUX": "C",
+			"commandOnlyTemperatureControl": false,
+			"queryOnlyTemperatureControl": true
+		},
+		"roomHint": "Guest Bedroom",
+		"reportState": true,
+		"hostName": "esp16",
+		"deviceName": "dht6"
+	},
+	{
+		"id": 19,
+		"handlerClass": "js.hera.assist.SensorDeviceHandler",
+		"type": "action.devices.types.SENSOR",
+		"traits": [
+			"action.devices.traits.HumiditySetting",
+			"action.devices.traits.TemperatureControl"
+		],
+		"name": {
+			"name": "Sensor",
+			"defaultNames": [],
+			"nicknames": []
+		},
+		"info": {
+			"manufacturer": "HERA",
+			"model": "js.hera.dev.Sensor",
+			"hwVersion": "1.0",
+			"swVersion": "1.0"
+		},
+		"attributes": {
+			"humiditySetpointRange": {
+				"minPercent": 0,
+				"maxPercent": 100
+			},
+			"commandOnlyHumiditySetting": false,
+			"queryOnlyHumiditySetting": true,
+			"temperatureRange": {
+				"minThresholdCelsius": 19.0,
+				"maxThresholdCelsius": 24.0
+			},
+			"temperatureStepCelsius": 0.5,
+			"temperatureUnitForUX": "C",
+			"commandOnlyTemperatureControl": false,
+			"queryOnlyTemperatureControl": true
+		},
+		"roomHint": "Kitchen",
+		"reportState": true,
+		"hostName": "esp7",
+		"deviceName": "dht1"
+	},
+	{
+		"id": 20,
+		"handlerClass": "js.hera.assist.SensorDeviceHandler",
+		"type": "action.devices.types.SENSOR",
+		"traits": [
+			"action.devices.traits.HumiditySetting",
+			"action.devices.traits.TemperatureControl"
+		],
+		"name": {
+			"name": "Sensor",
+			"defaultNames": [],
+			"nicknames": []
+		},
+		"info": {
+			"manufacturer": "HERA",
+			"model": "js.hera.dev.Sensor",
+			"hwVersion": "1.0",
+			"swVersion": "1.0"
+		},
+		"attributes": {
+			"humiditySetpointRange": {
+				"minPercent": 0,
+				"maxPercent": 100
+			},
+			"commandOnlyHumiditySetting": false,
+			"queryOnlyHumiditySetting": true,
+			"temperatureRange": {
+				"minThresholdCelsius": 19.0,
+				"maxThresholdCelsius": 24.0
+			},
+			"temperatureStepCelsius": 0.5,
+			"temperatureUnitForUX": "C",
+			"commandOnlyTemperatureControl": false,
+			"queryOnlyTemperatureControl": true
+		},
+		"roomHint": "Living Room",
+		"reportState": true,
+		"hostName": "esp10",
+		"deviceName": "dht5"
+	},
+	{
+		"id": 21,
+		"handlerClass": "js.hera.assist.SensorDeviceHandler",
+		"type": "action.devices.types.SENSOR",
+		"traits": [
+			"action.devices.traits.HumiditySetting",
+			"action.devices.traits.TemperatureControl"
+		],
+		"name": {
+			"name": "Sensor",
+			"defaultNames": [],
+			"nicknames": []
+		},
+		"info": {
+			"manufacturer": "HERA",
+			"model": "js.hera.dev.Sensor",
+			"hwVersion": "1.0",
+			"swVersion": "1.0"
+		},
+		"attributes": {
+			"humiditySetpointRange": {
+				"minPercent": 0,
+				"maxPercent": 100
+			},
+			"commandOnlyHumiditySetting": false,
+			"queryOnlyHumiditySetting": true,
+			"temperatureRange": {
+				"minThresholdCelsius": 19.0,
+				"maxThresholdCelsius": 24.0
+			},
+			"temperatureStepCelsius": 0.5,
+			"temperatureUnitForUX": "C",
+			"commandOnlyTemperatureControl": false,
+			"queryOnlyTemperatureControl": true
+		},
+		"roomHint": "Master Bedroom",
+		"reportState": true,
+		"hostName": "esp6",
+		"deviceName": "dht4"
 	}
 ]
