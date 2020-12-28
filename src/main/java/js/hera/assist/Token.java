@@ -7,6 +7,9 @@ public class Token
   private String refresh_token;
   private int expires_in;
 
+  // HACK:
+  private String code;
+  
   public String getToken_type()
   {
     return token_type;
@@ -45,6 +48,16 @@ public class Token
   public void setExpires_in(int expires_in)
   {
     this.expires_in = expires_in;
+  }
+
+  public String getCode()
+  {
+    return code;
+  }
+
+  public void setCode(String code)
+  {
+    this.code = code;
   }
 
   @Override
