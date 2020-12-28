@@ -87,19 +87,20 @@ public class TokenServlet extends AppServlet
       token.setCode(code);
       token.setToken_type("bearer");
       token.setExpires_in(TOKEN_EXPIRES);
-      token.setAccess_token(code + "123access");
-      token.setRefresh_token(UUID.randomUUID().toString());
+      token.setAccess_token(code + UUID());
+      token.setRefresh_token(UUID());
 
       TOKENS.put(token.getRefresh_token(), token);
       break;
 
     case "refresh_token":
       String refreshToken = tokenRequest.get("refresh_token");
+      log.debug("refresh_token: %s", refreshToken);
       token = TOKENS.get(refreshToken);
       if(token == null) {
         sendUnauthorized(context);
       }
-      token.setAccess_token(token.getCode() + "123access");
+      token.setAccess_token(token.getCode() + UUID());
       break;
     }
 
@@ -120,5 +121,10 @@ public class TokenServlet extends AppServlet
     else {
       return requestURL.append('?').append(queryString).toString();
     }
+  }
+
+  private static String UUID()
+  {
+    return UUID.randomUUID().toString();
   }
 }
