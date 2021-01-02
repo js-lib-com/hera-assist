@@ -98,6 +98,7 @@ public class TokenServlet extends AppServlet
       log.debug("refresh_token: %s", refreshToken);
       token = TOKENS.get(refreshToken);
       if(token == null) {
+        log.debug("Invalid refresh token: %s", refreshToken);
         sendUnauthorized(context);
       }
       token.setAccess_token(token.getCode() + UUID());
