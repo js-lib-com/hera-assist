@@ -2,7 +2,9 @@ package js.hera.assist;
 
 import java.net.DatagramPacket;
 import java.net.DatagramSocket;
+import java.net.HttpURLConnection;
 import java.net.InetAddress;
+import java.net.URL;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -27,6 +29,9 @@ public class ComputerDeviceHandler extends DeviceHandler
       if(parameter) {
         // by convention, for computers, device name is the MAC address
         WOL(getDeviceName());
+      }
+      else {
+        stanby(getHostName());
       }
       return query(user);
 
@@ -88,5 +93,29 @@ public class ComputerDeviceHandler extends DeviceHandler
       throw new IllegalArgumentException("Invalid hex digit in MAC address.");
     }
     return bytes;
+  }
+
+  private static void stanby(String hostName)
+  {
+    log.trace("stanby(String)");
+    HttpURLConnection connection = null;
+    try {
+      URL url = new URL(String.format("http://%s:7777/API/Standby.rmi", hostName));
+      log.debug("URL: %s", url);
+
+      connection = (HttpURLConnection)url.openConnection();
+      connection.setRequestMethod("POST");
+
+      int responseCode = connection.getResponseCode();
+      log.debug("Response code: %d", responseCode);
+    }
+    catch(Throwable t) {
+      log.error(t);
+    }
+    finally {
+      if(connection != null) {
+        connection.disconnect();
+      }
+    }
   }
 }
