@@ -8,6 +8,7 @@ import java.net.URL;
 import java.util.HashMap;
 import java.util.Map;
 
+import js.lang.AsyncTask;
 import js.log.Log;
 import js.log.LogFactory;
 
@@ -33,7 +34,7 @@ public class ComputerDeviceHandler extends DeviceHandler
       else {
         stanby(getHostName());
       }
-      return query(user);
+      return state(parameter);
 
     default:
       log.warn("Command |%s| not implemented.", command);
@@ -45,8 +46,13 @@ public class ComputerDeviceHandler extends DeviceHandler
   @Override
   public Map<String, Object> query(String user)
   {
+    return state(true);
+  }
+
+  private static Map<String, Object> state(boolean state)
+  {
     Map<String, Object> states = new HashMap<>();
-    states.put("on", true);
+    states.put("on", state);
     return states;
   }
 
@@ -98,24 +104,33 @@ public class ComputerDeviceHandler extends DeviceHandler
   private static void stanby(String hostName)
   {
     log.trace("stanby(String)");
-    HttpURLConnection connection = null;
-    try {
-      URL url = new URL(String.format("http://%s:7777/API/Standby.rmi", hostName));
-      log.debug("URL: %s", url);
+    AsyncTask<Void> task = new AsyncTask<Void>()
+    {
+      @Override
+      protected Void execute() throws Throwable
+      {
+        HttpURLConnection connection = null;
+        try {
+          URL url = new URL(String.format("http://%s:7777/API/Standby.rmi", hostName));
+          log.debug("URL: %s", url);
 
-      connection = (HttpURLConnection)url.openConnection();
-      connection.setRequestMethod("POST");
+          connection = (HttpURLConnection)url.openConnection();
+          connection.setRequestMethod("POST");
 
-      int responseCode = connection.getResponseCode();
-      log.debug("Response code: %d", responseCode);
-    }
-    catch(Throwable t) {
-      log.error(t);
-    }
-    finally {
-      if(connection != null) {
-        connection.disconnect();
+          int responseCode = connection.getResponseCode();
+          log.debug("Response code: %d", responseCode);
+        }
+        catch(Throwable t) {
+          log.error(t);
+        }
+        finally {
+          if(connection != null) {
+            connection.disconnect();
+          }
+        }
+        return null;
       }
-    }
+    };
+    task.start();
   }
 }
