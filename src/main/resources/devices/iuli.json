@@ -90,10 +90,11 @@
 	},
 	{
 		"id": 3,
-		"handlerClass": "js.hera.assist.OnOffDeviceHandler",
+		"handlerClass": "js.hera.assist.ColorLedDeviceHandler",
 		"type": "action.devices.types.LIGHT",
 		"traits": [
-			"action.devices.traits.OnOff"
+			"action.devices.traits.OnOff",
+			"action.devices.traits.ColorSetting"
 		],
 		"name": {
 			"name": "Desktop Lamp",
@@ -108,12 +109,14 @@
 		},
 		"attributes": {
 			"commandOnlyOnOff": false,
-			"queryOnlyOnOff": false
+			"queryOnlyOnOff": false,
+			"commandOnlyColorSetting": false,
+			"colorModel": "rgb"
 		},
 		"roomHint": "Living Room",
 		"reportState": true,
 		"hostName": "dht-sensor",
-		"deviceName": "actuator-5"
+		"deviceName": "color-led"
 	},
 	{
 		"id": 4,
