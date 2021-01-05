@@ -711,5 +711,32 @@
 		"reportState": true,
 		"hostName": "esp6",
 		"deviceName": "dht4"
+	},
+	{
+		"id": 22,
+		"handlerClass": "js.hera.assist.ColorLedDeviceHandler",
+		"type": "action.devices.types.LIGHT",
+		"traits": [
+			"action.devices.traits.ColorSetting"
+		],
+		"name": {
+			"name": "RGB LED Strip",
+			"defaultNames": [],
+			"nicknames": ["RGB LED Strip", "Back Light", "Strip Light"]
+		},
+		"info": {
+			"manufacturer": "HERA",
+			"model": "js.hera.dev.ColorLED",
+			"hwVersion": "1.0",
+			"swVersion": "1.0"
+		},
+		"attributes": {
+			"commandOnlyColorSetting": false,
+			"colorModel": "rgb"
+		},
+		"roomHint": "Kitchen",
+		"reportState": true,
+		"hostName": "esp7",
+		"deviceName": "rgb-strip1"
 	}
 ]
