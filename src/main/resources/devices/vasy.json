@@ -717,7 +717,9 @@
 		"handlerClass": "js.hera.assist.ColorLedDeviceHandler",
 		"type": "action.devices.types.LIGHT",
 		"traits": [
-			"action.devices.traits.ColorSetting"
+			"action.devices.traits.ColorSetting",
+			"action.devices.traits.Brightness",
+			"action.devices.traits.OnOff"
 		],
 		"name": {
 			"name": "RGB LED Strip",
@@ -732,7 +734,10 @@
 		},
 		"attributes": {
 			"commandOnlyColorSetting": false,
-			"colorModel": "rgb"
+			"colorModel": "rgb",
+			"commandOnlyBrightness": true,
+			"commandOnlyOnOff": false,
+			"queryOnlyOnOff": false
 		},
 		"roomHint": "Kitchen",
 		"reportState": true,
