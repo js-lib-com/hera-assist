@@ -20,7 +20,7 @@ public class RollerBlindsDeviceHandler extends DeviceHandler
   {
     switch(command) {
     case "action.devices.commands.OpenClose":
-      double percent = ((double)parameters.get("openPercent") / 100.0);
+      double percent = ((int)parameters.get("openPercent") / 100.0);
       return states(rmi(user, "open", Double.toString(percent), double.class));
       
     default:
