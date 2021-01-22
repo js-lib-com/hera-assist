@@ -743,5 +743,76 @@
 		"reportState": true,
 		"hostName": "esp7",
 		"deviceName": "rgb-strip1"
+	},
+	{
+		"id": 23,
+		"handlerClass": "js.hera.assist.RollerBlindsDeviceHandler",
+		"type": "action.devices.types.BLINDS",
+		"traits": [
+			"action.devices.traits.OpenClose"
+		],
+		"name": {
+			"name": "Roller Blinds",
+			"defaultNames": [],
+			"nicknames": [
+				"Roller Blinds",
+				"Roller",
+				"Blinds"
+			]
+		},
+		"info": {
+			"manufacturer": "HERA",
+			"model": "js.hera.dev.RollerBlinds",
+			"hwVersion": "1.0",
+			"swVersion": "1.0"
+		},
+		"attributes": {
+			"discreteOnlyOpenClose": false,
+			"openDirection": [
+				"UP",
+				"DOWN"
+			],
+			"commandOnlyOpenClose": false,
+			"queryOnlyOpenClose": false
+		},
+		"roomHint": "Master Bedroom",
+		"reportState": true,
+		"hostName": "esp17",
+		"deviceName": "roller1"
+	},
+	{
+		"id": 24,
+		"handlerClass": "js.hera.assist.RollerBlindsDeviceHandler",
+		"type": "action.devices.types.BLINDS",
+		"traits": [
+			"action.devices.traits.OpenClose"
+		],
+		"name": {
+			"name": "Roller Blinds",
+			"defaultNames": [],
+			"nicknames": [
+				"Roller Blinds",
+				"Blinds"
+			]
+		},
+		"info": {
+			"manufacturer": "HERA",
+			"model": "js.hera.dev.RollerBlinds",
+			"hwVersion": "1.0",
+			"swVersion": "1.0"
+		},
+		"attributes": {
+			"discreteOnlyOpenClose": false,
+			"openDirection": [
+				"UP",
+				"DOWN"
+			],
+			"commandOnlyOpenClose": false,
+			"queryOnlyOpenClose": false
+		},
+		"roomHint": "Guest Bedroom",
+		"reportState": true,
+		"hostName": "esp18",
+		"deviceName": "roller2"
 	}
 ]

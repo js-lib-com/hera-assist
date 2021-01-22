@@ -454,7 +454,12 @@
 		"name": {
 			"name": "Second Light",
 			"defaultNames": [],
-			"nicknames": ["Second Light", "Little Light","Light Two", "Secondary Light"]
+			"nicknames": [
+				"Second Light",
+				"Little Light",
+				"Light Two",
+				"Secondary Light"
+			]
 		},
 		"info": {
 			"manufacturer": "HERA",
@@ -470,5 +475,40 @@
 		"reportState": true,
 		"hostName": "actuators",
 		"deviceName": "binary-light-1"
-	}	
+	},
+	{
+		"id": 14,
+		"handlerClass": "js.hera.assist.RollerBlindsDeviceHandler",
+		"type": "action.devices.types.BLINDS",
+		"traits": [
+			"action.devices.traits.OpenClose"
+		],
+		"name": {
+			"name": "Roller Blinds",
+			"defaultNames": [],
+			"nicknames": [
+				"Roller Blinds",
+				"Blinds"
+			]
+		},
+		"info": {
+			"manufacturer": "HERA",
+			"model": "js.hera.dev.RollerBlinds",
+			"hwVersion": "1.0",
+			"swVersion": "1.0"
+		},
+		"attributes": {
+			"discreteOnlyOpenClose": false,
+			"openDirection": [
+				"UP",
+				"DOWN"
+			],
+			"commandOnlyOpenClose": false,
+			"queryOnlyOpenClose": false
+		},
+		"roomHint": "Living Room",
+		"reportState": true,
+		"hostName": "roller-blinds",
+		"deviceName": "roller-blinds"
+	}
 ]
