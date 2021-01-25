@@ -510,5 +510,34 @@
 		"reportState": true,
 		"hostName": "roller-blinds",
 		"deviceName": "roller-blinds"
+	},
+	{
+		"id": 15,
+		"handlerClass": "js.hera.assist.DimmerDeviceHandler",
+		"type": "action.devices.types.LIGHT",
+		"traits": [
+			"action.devices.traits.Brightness"
+		],
+		"name": {
+			"name": "Light Dimmer",
+			"defaultNames": [],
+			"nicknames": [
+				"Light Dimmer",
+				"Dimmer"
+			]
+		},
+		"info": {
+			"manufacturer": "HERA",
+			"model": "js.hera.dev.LightDimmer",
+			"hwVersion": "1.0",
+			"swVersion": "1.0"
+		},
+		"attributes": {
+			"commandOnlyBrightness": false
+		},
+		"roomHint": "Living Room",
+		"reportState": true,
+		"hostName": "dht-sensor",
+		"deviceName": "light-dimmer"
 	}
 ]
