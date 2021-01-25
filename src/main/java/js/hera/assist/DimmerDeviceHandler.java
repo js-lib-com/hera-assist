@@ -20,9 +20,9 @@ public class DimmerDeviceHandler extends DeviceHandler
     switch(command) {
     case "action.devices.commands.BrightnessAbsolute":
       Integer brightness = (Integer)parameters.get("brightness");
-      assert brightness < 256;
-      byte value = (byte)Math.round(255.0 * brightness.doubleValue() / 100.0);
-      return states(rmi(user, "updateValue", Byte.toString(value), byte.class));
+      assert brightness <= 100;
+      Long value = Math.round(255.0 * brightness.doubleValue() / 100.0);
+      return states(rmi(user, "updateValue", value.toString(), byte.class));
 
     default:
       log.warn("Command |%s| not implemented.", command);
