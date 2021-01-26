@@ -516,6 +516,7 @@
 		"handlerClass": "js.hera.assist.DimmerDeviceHandler",
 		"type": "action.devices.types.LIGHT",
 		"traits": [
+			"action.devices.traits.OnOff",
 			"action.devices.traits.Brightness"
 		],
 		"name": {
@@ -533,6 +534,8 @@
 			"swVersion": "1.0"
 		},
 		"attributes": {
+			"commandOnlyOnOff": false,
+			"queryOnlyOnOff": false,
 			"commandOnlyBrightness": false
 		},
 		"roomHint": "Living Room",
