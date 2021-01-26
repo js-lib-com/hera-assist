@@ -49,7 +49,7 @@ public class DimmerDeviceHandler extends DeviceHandler
     }
 
     states.put("online", true);
-    states.put("on", state.running);
+    states.put("on", state.active);
     assert state.value < 256;
     states.put("brightness", (int)Math.round(100.0 * state.value.doubleValue() / 256.0));
     return states;
@@ -57,7 +57,7 @@ public class DimmerDeviceHandler extends DeviceHandler
 
   private static class State
   {
-    boolean running;
+    boolean active;
     Integer value;
   }
 }
